@@ -266,7 +266,7 @@ def class_results(root, frame):
             yticks=range(3),
             xticklabels=["П1", "Х", "П2"],
             yticklabels=["П1", "Х", "П2"],
-            xlabel="Прогноз",
+            xlabel="Исход с максимальной вероятностью",
             ylabel="Факт",
         )
         fig.tight_layout()
@@ -665,6 +665,9 @@ def match_report(root, frame, result, names, metrics, comparisons):
     examples.columns = ["Дата", "Хозяева", "Гости", "П1", "Ничья", "П2"]
     examples.to_csv(root / "reports/tables/final_examples.csv", index=False)
     football, football_short = football_results(root, frame, result, names)
+    from .football_analysis import report as analyze_football
+
+    draw_analysis, draw_summary = analyze_football(root, frame, table, figure)
     chosen = metrics.loc[metrics.model.eq("neural") & metrics.group.eq("all")].iloc[0]
     draw_count = int(
         (
@@ -673,7 +676,7 @@ def match_report(root, frame, result, names, metrics, comparisons):
         ).sum()
     )
     short = f"Log loss {chosen.log_loss:.5f}, Brier {chosen.brier:.5f}, accuracy {chosen.accuracy:.1%} на {len(frame):,} матчах сезона 2019/20."
-    short += " " + football_short
+    short += " " + football_short + " " + draw_summary
     body = f"""# Вероятности исходов футбольных матчей
 
 Нейросеть TensorFlow/Keras прогнозирует победу хозяев, ничью и победу гостей до начала матча. Используется архив Understat по пяти лигам за 2014/15–2019/20. Модель ежегодно обучается заново на всей завершённой истории.
@@ -746,7 +749,9 @@ def match_report(root, frame, result, names, metrics, comparisons):
 
 ![Распределение ошибок](figures/final_confusion.png)
 
-Ничья оказалась наиболее вероятным исходом в {draw_count} матчах из {len(frame)}. Матрица отражает решение по максимуму вероятности; log loss использует весь вектор и чувствителен к уверенности прогноза.
+Столбец ничьих пуст, поскольку здесь выбирается только один исход с максимальной вероятностью. Ниже отдельно разобраны количество ожидаемых ничьих и способность выделять конкретные ничейные матчи.
+
+{draw_analysis}
 
 ## Неопределённость результата
 

@@ -214,6 +214,15 @@ def build(execute=True):
                               'pred_npxg90','lo90_npxg90','hi90_npxg90','pred_xa90','pred_change_attacking90']])
         """
         )
+    md("## Футбольный результат")
+    code(
+        """
+        display(pd.read_csv(REPORTS / 'tables/final_outcome_counts.csv').round(3))
+        display(pd.read_csv(REPORTS / 'tables/final_draw_analysis.csv').round(3))
+        display(pd.read_csv(REPORTS / 'tables/final_match_difficulty.csv').round(3))
+        display(Image(filename=str(FIGURES / 'final_draw_diagnosis.png'), width=1050))
+        """
+    )
     notebook = nbformat.v4.new_notebook(
         cells=cells,
         metadata={
