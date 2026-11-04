@@ -137,8 +137,27 @@ def build(execute=True):
             MATCH_ID = None
             example = predictions.loc[predictions.match_id.eq(MATCH_ID)] if MATCH_ID else predictions.sort_values('date').tail(10)
             display(example[['match_id','date','home','away','p_neural_0','p_neural_1','p_neural_2']])
+        """
+        )
+        md("## Очки команд")
+        code(
+            """
             teams = pd.read_csv(REPORTS / 'tables/final_team_points.csv')
-            display(teams.sort_values('difference', ascending=False).head(10))
+            summary = pd.read_csv(REPORTS / 'tables/final_team_error_summary.csv')
+            display(summary[['league', 'teams', 'mae', 'rmse', 'bias', 'std', 'variance', 'mae_per_match']].round(3))
+            display(Image(filename=str(FIGURES / 'final_team_points.png'), width=1000))
+            display(pd.read_csv(REPORTS / 'tables/final_team_model_comparison.csv')[['model', 'mae', 'rmse', 'position_mae']].round(3))
+        """
+        )
+        md("## Места в лиге")
+        code(
+            """
+            display(summary[['league', 'teams', 'position_mae', 'exact_positions', 'within_2_positions', 'max_position_error']].round(2))
+            display(pd.read_csv(REPORTS / 'tables/final_standings_outcomes.csv'))
+
+            LEAGUE = 'EPL'
+            display(teams.loc[teams.league.eq(LEAGUE), ['team', 'matches', 'points', 'expected', 'difference',
+                                                      'actual_position', 'predicted_position', 'position_difference']].round(2))
         """
         )
     else:

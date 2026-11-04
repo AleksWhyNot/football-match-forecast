@@ -1,0 +1,99 @@
+season,league,team,actual_position,reference_matches,reference_points,ranking_basis,source_url
+2019,EPL,Liverpool,1,38,99,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Manchester City,2,38,81,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Manchester United,3,38,66,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Chelsea,4,38,66,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Leicester,5,38,62,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Tottenham,6,38,59,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Wolverhampton Wanderers,7,38,59,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Arsenal,8,38,56,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Sheffield United,9,38,54,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Burnley,10,38,54,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Southampton,11,38,52,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Everton,12,38,49,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Newcastle United,13,38,44,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Crystal Palace,14,38,43,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Brighton,15,38,41,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,West Ham,16,38,39,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Aston Villa,17,38,35,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Bournemouth,18,38,34,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Watford,19,38,34,points,https://www.rsssf.org/tablese/eng2020.html
+2019,EPL,Norwich,20,38,21,points,https://www.rsssf.org/tablese/eng2020.html
+2019,Bundesliga,Bayern Munich,1,34,82,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Borussia Dortmund,2,34,69,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,RasenBallsport Leipzig,3,34,66,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Borussia M.Gladbach,4,34,65,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Bayer Leverkusen,5,34,63,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Hoffenheim,6,34,52,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Wolfsburg,7,34,49,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Freiburg,8,34,48,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Eintracht Frankfurt,9,34,45,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Hertha Berlin,10,34,41,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Union Berlin,11,34,41,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Schalke 04,12,34,39,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Mainz 05,13,34,37,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,FC Cologne,14,34,36,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Augsburg,15,34,36,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Werder Bremen,16,34,31,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Fortuna Duesseldorf,17,34,30,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,Bundesliga,Paderborn,18,34,20,points,https://www.rsssf.org/tablesd/duit2020.html
+2019,La_Liga,Real Madrid,1,38,87,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Barcelona,2,38,82,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Atletico Madrid,3,38,70,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Sevilla,4,38,70,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Villarreal,5,38,60,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Real Sociedad,6,38,56,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Granada,7,38,56,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Getafe,8,38,54,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Valencia,9,38,53,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Osasuna,10,38,52,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Athletic Club,11,38,51,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Levante,12,38,49,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Real Valladolid,13,38,42,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Eibar,14,38,42,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Real Betis,15,38,41,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Alaves,16,38,39,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Celta Vigo,17,38,37,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Leganes,18,38,36,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Mallorca,19,38,33,points,https://www.rsssf.org/tabless/span2020.html
+2019,La_Liga,Espanyol,20,38,25,points,https://www.rsssf.org/tabless/span2020.html
+2019,Serie_A,Juventus,1,38,83,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Inter,2,38,82,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Atalanta,3,38,78,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Lazio,4,38,78,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Roma,5,38,70,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,AC Milan,6,38,66,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Napoli,7,38,62,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Sassuolo,8,38,51,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Verona,9,38,49,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Fiorentina,10,38,49,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Parma Calcio 1913,11,38,49,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Bologna,12,38,47,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Udinese,13,38,45,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Cagliari,14,38,45,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Sampdoria,15,38,42,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Torino,16,38,40,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Genoa,17,38,39,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Lecce,18,38,35,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,Brescia,19,38,25,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Serie_A,SPAL 2013,20,38,20,points,https://www.rsssf.org/tablesi/ital2020.html
+2019,Ligue_1,Paris Saint Germain,1,27,68,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Marseille,2,28,56,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Rennes,3,28,50,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Lille,4,28,49,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Nice,5,28,41,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Reims,6,28,41,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Lyon,7,28,40,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Montpellier,8,28,40,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Monaco,9,28,40,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Strasbourg,10,27,38,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Angers,11,28,39,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Bordeaux,12,28,37,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Nantes,13,28,37,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Brest,14,28,34,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Metz,15,28,34,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Dijon,16,28,30,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Saint-Etienne,17,28,30,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Nimes,18,28,27,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Amiens,19,28,23,points_per_match,https://www.rsssf.org/tablesf/fran2020.html
+2019,Ligue_1,Toulouse,20,28,13,points_per_match,https://www.rsssf.org/tablesf/fran2020.html

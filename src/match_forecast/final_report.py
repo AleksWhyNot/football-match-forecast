@@ -407,6 +407,22 @@ DICTIONARY = r"""| Поле | Значение и доступность |
 | p_neural_0/1/2 | Вероятности П1/Х/П2 после калибровки |
 | split | train, validation, calibration, test |
 
+В `final_team_points.csv` одна строка соответствует команде в сезоне.
+
+| Поле | Значение |
+|---|---|
+| matches, points | Сыгранные матчи и набранные очки |
+| expected | Сумма 3 × P(победа) + P(ничья) по матчам команды |
+| difference, absolute_error | Факт минус ожидание и модуль этой разницы |
+| actual_position | Итоговое место из справочной таблицы RSSSF |
+| predicted_position | Место по ожидаемым очкам, для Лиги 1 по очкам за матч |
+| position_difference | Расчётное место минус фактическое, плюс означает финиш выше расчёта |
+| absolute_position_error | Модуль отклонения места |
+| points_per_match, expected_per_match | Фактические и ожидаемые очки на матч |
+| ranking_basis | points или points_per_match, правило сортировки |
+
+В `final_team_error_summary.csv` находятся ошибки по лигам и общая строка `all`. MAE, RMSE, смещение и стандартное отклонение выражены в очках, variance — в очках². `within_5_points`, `within_10_points`, `exact_positions`, `within_2_positions` содержат число команд. `mae_per_match` выражен в очках на матч, показатели `position_*` — в местах.
+
 `forecast.w/d/l` из источника исключены. Префиксы `f_` и `c_` определяют список входов;
 `b_` и `p_` содержат результаты ориентиров и не попадают в подготовку входов автоматически."""
 
@@ -420,7 +436,205 @@ SOURCES = r"""- [Understat](https://understat.com/) — первоначальн
 В зеркале не обнаружена отдельная лицензия на распространение данных: в Git и ZIP включён загрузчик,
 а исходные CSV и построчные промежуточные данные остаются локальными. Выгрузка содержит поздний снимок данных; историю исправлений поставщика проверить по нему невозможно.
 
-- [Hyndman и Athanasopoulos. Временная кросс-валидация](https://otexts.com/fpp3/tscv.html)."""
+- [Hyndman и Athanasopoulos. Временная кросс-валидация](https://otexts.com/fpp3/tscv.html).
+- Итоговые таблицы RSSSF за 2019/20 — [Англия](https://www.rsssf.org/tablese/eng2020.html), [Германия](https://www.rsssf.org/tablesd/duit2020.html), [Испания](https://www.rsssf.org/tabless/span2020.html), [Италия](https://www.rsssf.org/tablesi/ital2020.html), [Франция](https://www.rsssf.org/tablesf/fran2020.html). Справочник `config/standings_2019_20.csv` содержит итоговые места, число матчей, очки и адрес источника для каждой команды. Проверено 4 ноября 2026 года."""
+
+
+def football_results(root, frame, result, names):
+    from .standings import team_points, summarize, league_outcomes
+
+    reference = pd.read_csv(root / "config/standings_2019_20.csv")
+    teams = team_points(frame, reference)
+    summary = summarize(teams)
+    outcomes = league_outcomes(teams)
+    comparison = pd.DataFrame(
+        [
+            {
+                "model": model,
+                **summarize(team_points(frame, reference, model)).iloc[0].to_dict(),
+            }
+            for model in ["neural", "constant", "elo", "poisson"]
+        ]
+    )
+    for filename, values in [
+        ("final_team_points", teams),
+        ("final_team_error_summary", summary),
+        ("final_standings_outcomes", outcomes),
+        ("final_team_model_comparison", comparison),
+    ]:
+        values.to_csv(root / "reports/tables" / f"{filename}.csv", index=False)
+    overall = summary.iloc[0]
+    result["football"] = {
+        "team_errors": summary.to_dict("records"),
+        "model_comparison": comparison.to_dict("records"),
+        "league_outcomes": outcomes.to_dict("records"),
+        "variance_ddof": 0,
+        "point_error_sign": "actual_minus_expected",
+        "position_error_sign": "predicted_minus_actual",
+    }
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.1))
+    for league, group in teams.groupby("league"):
+        axes[0].scatter(
+            group.expected, group.points, label=LEAGUES[league], s=24, alpha=0.8
+        )
+    axes[0].plot([10, 105], [10, 105], color="#687782", linestyle="--", linewidth=1)
+    axes[0].set(
+        xlabel="Сумма ожидаемых очков",
+        ylabel="Фактические очки",
+        xlim=(10, 105),
+        ylim=(10, 105),
+    )
+    axes[0].legend(fontsize=8)
+    axes[1].hist(
+        teams.difference, bins=np.arange(-22, 19, 4), color="#187d82", edgecolor="white"
+    )
+    axes[1].axvline(0, color="#687782", linestyle="--", linewidth=1)
+    axes[1].set(xlabel="Факт минус ожидание, очки", ylabel="Команд")
+    fig.tight_layout()
+    figure(root, fig, "team_points")
+
+    error_view = summary.replace({"league": {**LEAGUES, "all": "Все команды"}})[
+        ["league", "teams", "mae", "bias", "std", "variance"]
+    ]
+    error_view.columns = [
+        "Лига",
+        "Команд",
+        "Средняя ошибка",
+        "Смещение",
+        "Ст. отклонение",
+        "Дисперсия",
+    ]
+    rank_view = summary.replace({"league": {**LEAGUES, "all": "Все команды"}})[
+        [
+            "league",
+            "position_mae",
+            "exact_positions",
+            "within_2_positions",
+            "max_position_error",
+        ]
+    ]
+    rank_view.columns = [
+        "Лига",
+        "Ошибка в местах",
+        "Точное место",
+        "В пределах ±2",
+        "Максимум",
+    ]
+    compare_view = comparison.replace({"model": names})[
+        ["model", "mae", "rmse", "position_mae"]
+    ]
+    compare_view.columns = ["Модель", "Ошибка в очках", "RMSE очков", "Ошибка в местах"]
+    outcome_view = outcomes.replace({"league": LEAGUES})[
+        [
+            "league",
+            "actual_winner",
+            "predicted_winner",
+            "top4_overlap",
+            "bottom3_overlap",
+        ]
+    ]
+    outcome_view.columns = [
+        "Лига",
+        "Чемпион",
+        "Лидер расчёта",
+        "Из топ-4",
+        "Из последних 3",
+    ]
+
+    league_tables = []
+    for league in ["EPL", "Bundesliga", "La_Liga", "Serie_A", "Ligue_1"]:
+        group = teams.loc[teams.league.eq(league)].copy()
+        for column in ["expected", "difference"]:
+            group[column] = group[column].map(
+                lambda x: f"{x:.2f}" if column == "expected" else f"{x:+.2f}"
+            )
+        group["predicted_position"] = group.predicted_position.map(lambda x: f"{x:g}")
+        group["position_difference"] = group.position_difference.map(
+            lambda x: f"{x:+g}"
+        )
+        columns = [
+            "actual_position",
+            "team",
+            "points",
+            "expected",
+            "difference",
+            "predicted_position",
+            "position_difference",
+        ]
+        labels = [
+            "Место",
+            "Команда",
+            "Очки",
+            "Расчёт",
+            "Δ очков",
+            "Расчётное место",
+            "Δ мест",
+        ]
+        if league == "Ligue_1":
+            columns.insert(2, "matches")
+            labels.insert(2, "Матчи")
+        view = group[columns]
+        view.columns = labels
+        league_tables.append("### " + LEAGUES[league] + "\n\n" + table(view, 2))
+
+    by_team = teams.set_index("team")
+    football_short = (
+        f"Средняя ошибка суммы предматчевых ожиданий — {overall.mae:.2f} очка на команду, "
+        f"расчётного места — {overall.position_mae:.2f} позиции. "
+        f"В пределах двух мест оказались {int(overall.within_2_positions)} из {len(teams)} команд."
+    )
+    content = f"""## Насколько точно получаются очки команд
+
+Для каждой команды складываются ожидаемые очки всех сыгранных матчей сезона 2019/20. Каждый прогноз использует историю, доступную перед конкретной встречей. Таким образом оценивается сумма последовательных предматчевых прогнозов с обновлением формы команды по ходу сезона. Для прогноза всей таблицы на старте сезона потребуется отдельная проверка с информацией, доступной на эту дату.
+
+Ошибка равна фактическим очкам минус расчётным. Плюс означает, что команда набрала больше ожидаемого, минус — меньше. Средняя абсолютная ошибка показывает обычный размер расхождения без взаимного погашения плюсов и минусов.
+
+{table(error_view, 2)}
+
+На {len(teams)} командах средняя абсолютная ошибка составляет **{overall.mae:.2f} очка**, медианная — {overall.median_absolute_error:.2f}. RMSE равен {overall.rmse:.2f} очка и сильнее учитывает крупные промахи. У {int(overall.within_5_points)} команд ({overall.within_5_points / len(teams):.1%}) ошибка укладывается в 5 очков, у {int(overall.within_10_points)} ({overall.within_10_points / len(teams):.1%}) — в 10 очков.
+
+Дисперсия отклонений равна **{overall.variance:.2f} очка²**, стандартное отклонение — {overall['std']:.2f} очка. Они описывают разброс ошибок между командами этого сезона. Дисперсия рассчитана как средний квадрат отклонения ошибки от её среднего с делением на число команд. Это характеристика наблюдаемого разброса, а интервал для очков отдельной команды требует моделирования неопределённости её матчей.
+
+Среднее смещение всего {overall.bias:+.2f} очка объясняется взаимной компенсацией ошибок. Например, Liverpool набрал {by_team.loc['Liverpool', 'points']} очков при расчёте {by_team.loc['Liverpool', 'expected']:.2f}, а Espanyol — {by_team.loc['Espanyol', 'points']} при расчёте {by_team.loc['Espanyol', 'expected']:.2f}. Для Espanyol ошибка достигает {by_team.loc['Espanyol', 'absolute_error']:.2f} очка. По таким случаям видно, почему одного среднего смещения недостаточно.
+
+![Ожидаемые очки и ошибки команд](figures/final_team_points.png)
+
+Каждая команда имеет одинаковый вес в общей строке. Бундеслига содержит 34 матча на клуб, АПЛ, Ла Лига и Серия А — 38, Лига 1 — 27–28. Средняя абсолютная ошибка на матч равна {overall.mae_per_match:.3f} очка. Этот показатель также сохранён отдельно по лигам в таблице ошибок, чтобы учитывать разную длину сезона.
+
+## Насколько точно получаются места
+
+Расчётное место получается сортировкой команд по ожидаемым очкам внутри лиги. Во Франции сезон завершился досрочно, поэтому для сортировки используются ожидаемые очки за матч. Фактические места взяты из итоговых таблиц RSSSF с учётом дополнительных правил при равенстве очков. Число сыгранных матчей и набранные очки всех 98 команд сверены с результатами в датасете.
+
+Разница мест равна расчётному месту минус фактическое. Например, +3 означает, что команда закончила сезон на три позиции выше расчёта. При одинаковых ожиданиях используется среднее из занятых мест. Порядок определяется до округления отображаемых очков. Место в таблице ожиданий — отдельный показатель, для среднего места по возможным исходам сезона нужна симуляция результатов матчей.
+
+{table(rank_view, 2)}
+
+Средняя ошибка равна **{overall.position_mae:.2f} места**. Точное совпадение получилось у {int(overall.exact_positions)} из {len(teams)} команд ({overall.exact_positions / len(teams):.1%}), отклонение не более двух мест — у {int(overall.within_2_positions)} ({overall.within_2_positions / len(teams):.1%}). Наибольшая ошибка составляет {overall.max_position_error:.0f} мест. Granada заняла {by_team.loc['Granada', 'actual_position']}-е место при расчётном {by_team.loc['Granada', 'predicted_position']:.0f}-м, Osasuna — {by_team.loc['Osasuna', 'actual_position']}-е при {by_team.loc['Osasuna', 'predicted_position']:.0f}-м.
+
+Очки и места стоит смотреть вместе. Real Valladolid набрал {by_team.loc['Real Valladolid', 'points']} очка при ожидании {by_team.loc['Real Valladolid', 'expected']:.2f}, но расчётное {by_team.loc['Real Valladolid', 'predicted_position']:.0f}-е место отличается от фактического {by_team.loc['Real Valladolid', 'actual_position']}-го на {by_team.loc['Real Valladolid', 'absolute_position_error']:.0f} позиций. В плотной части таблицы небольшое изменение очков заметно меняет порядок команд.
+
+{table(outcome_view, 0)}
+
+Лидер расчётной таблицы совпал с чемпионом в {int(outcomes.winner_correct.sum())} из {len(outcomes)} лиг. Из двадцати мест в первых четвёрках совпали {outcomes.top4_overlap.sum()}, из пятнадцати мест в последних тройках — {outcomes.bottom3_overlap.sum()}. Последняя колонка сравнивает три нижних места каждой таблицы. В Бундеслиге 16-е место ведёт в стыковые матчи, а во Франции в этом сезоне вылетели две команды.
+
+## Сравнение по очкам и местам
+
+Все модели используют один набор матчей. Для каждой заново складываются ожидаемые очки и строится своя таблица.
+
+{table(compare_view, 2)}
+
+По средней ошибке очков нейросеть точнее Elo на {comparison.loc[comparison.model.eq('elo'), 'mae'].iloc[0] - overall.mae:.2f} очка на команду. По местам преимущество меньше — {comparison.loc[comparison.model.eq('elo'), 'position_mae'].iloc[0] - overall.position_mae:.2f} позиции. Расчёт полезен для оценки общего уровня команд и состава верхней части таблицы. Выбор чемпиона и порядок в плотной середине остаются заметно менее точными. Эти результаты относятся к одному тестовому сезону.
+
+## Турнирные таблицы сезона 2019/20
+
+Строки расположены по фактическому месту. «Расчёт» — сумма ожидаемых очков, Δ очков — факт минус расчёт, Δ мест — расчётное место минус фактическое. В таблице Лиги 1 очки показаны за сыгранные матчи, а расчётные места определяются по очкам за матч.
+
+{chr(10).join(league_tables)}
+
+Полные данные доступны в [Excel](tables/final_team_points.xlsx) и [CSV](tables/final_team_points.csv). Сводные ошибки по лигам сохранены в [отдельной таблице](tables/final_team_error_summary.csv).
+"""
+    return content, football_short
 
 
 def match_report(root, frame, result, names, metrics, comparisons):
@@ -450,37 +664,7 @@ def match_report(root, frame, result, names, metrics, comparisons):
     ]
     examples.columns = ["Дата", "Хозяева", "Гости", "П1", "Ничья", "П2"]
     examples.to_csv(root / "reports/tables/final_examples.csv", index=False)
-    teamrows = []
-    for side, win in [("home", 0), ("away", 2)]:
-        teamrows.append(
-            pd.DataFrame(
-                {
-                    "team": frame[side],
-                    "league": frame.league,
-                    "actual_points": np.where(
-                        frame.target.eq(win), 3, np.where(frame.target.eq(1), 1, 0)
-                    ),
-                    "expected_points": 3 * frame[f"p_neural_{win}"] + frame.p_neural_1,
-                }
-            )
-        )
-    teams = (
-        pd.concat(teamrows)
-        .groupby(["league", "team"])
-        .agg(
-            matches=("actual_points", "size"),
-            points=("actual_points", "sum"),
-            expected=("expected_points", "sum"),
-        )
-        .reset_index()
-    )
-    teams["difference"] = teams.points - teams.expected
-    teams.to_csv(root / "reports/tables/final_team_points.csv", index=False)
-    teamview = teams.loc[
-        teams.difference.abs().nlargest(8).index,
-        ["team", "matches", "points", "expected", "difference"],
-    ]
-    teamview.columns = ["Команда", "Матчи", "Очки", "Ожидание", "Разница"]
+    football, football_short = football_results(root, frame, result, names)
     chosen = metrics.loc[metrics.model.eq("neural") & metrics.group.eq("all")].iloc[0]
     draw_count = int(
         (
@@ -489,6 +673,7 @@ def match_report(root, frame, result, names, metrics, comparisons):
         ).sum()
     )
     short = f"Log loss {chosen.log_loss:.5f}, Brier {chosen.brier:.5f}, accuracy {chosen.accuracy:.1%} на {len(frame):,} матчах сезона 2019/20."
+    short += " " + football_short
     body = f"""# Вероятности исходов футбольных матчей
 
 Нейросеть TensorFlow/Keras прогнозирует победу хозяев, ничью и победу гостей до начала матча. Используется архив Understat по пяти лигам за 2014/15–2019/20. Модель ежегодно обучается заново на всей завершённой истории.
@@ -581,9 +766,7 @@ def match_report(root, frame, result, names, metrics, comparisons):
 
 Показаны исторические прогнозы последних матчей архива. Например, вероятность 0.6 означает оценку 60% для соответствующего исхода при доступной модели информации. Для каждой команды ожидаемые очки в матче равны 3 × P(победа) + P(ничья).
 
-{table(teamview,2)}
-
-В таблице восемь наибольших абсолютных отклонений фактических очков от суммы предматчевых ожиданий. Размер выборки ограничен матчами тестового сезона. Такое отклонение может отражать неожиданные результаты и ошибки прогноза. Полная [таблица команд](tables/final_team_points.csv) содержит все клубы.
+{football}
 
 ## Выводы
 

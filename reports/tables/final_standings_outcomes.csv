@@ -1,0 +1,6 @@
+season,league,actual_winner,predicted_winner,winner_correct,top4_overlap,bottom3_overlap
+2019,Bundesliga,Bayern Munich,Bayern Munich,True,3,2
+2019,EPL,Liverpool,Manchester City,False,4,2
+2019,La_Liga,Real Madrid,Barcelona,False,4,1
+2019,Ligue_1,Paris Saint Germain,Paris Saint Germain,True,3,1
+2019,Serie_A,Juventus,Atalanta,False,3,3
