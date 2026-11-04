@@ -1,0 +1,16 @@
+[
+  {
+    "period": "2019",
+    "calibration_periods": [
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "calibrator": {
+      "method": "none",
+      "n": 5478,
+      "classes": 3
+    },
+    "intervals": {}
+  }
+]

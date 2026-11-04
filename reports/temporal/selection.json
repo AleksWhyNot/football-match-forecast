@@ -1,0 +1,31 @@
+{
+  "profile": {
+    "name": "regularized",
+    "widths": [
+      32,
+      16
+    ],
+    "l2": 0.005,
+    "dropout": 0.2
+  },
+  "profile_validation_scores": {
+    "regularized": 0.9735738291438357,
+    "standard": 0.9768335653849547
+  },
+  "calibration": {
+    "window": "expanding",
+    "method": "none",
+    "log_loss": 0.9735738291438357,
+    "periods": [
+      "2017",
+      "2018"
+    ]
+  },
+  "validation_periods": [
+    "2017",
+    "2018"
+  ],
+  "first_test": "2019",
+  "fingerprint": "e27d2b249918d3f32fd40d5a43a95e09e8932c4300897525184c9c6ff3939675",
+  "test_status": "previously_inspected_retrospective_evaluation"
+}

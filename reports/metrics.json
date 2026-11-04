@@ -1,0 +1,351 @@
+{
+  "test_matches": 1725,
+  "metrics": [
+    {
+      "model": "constant",
+      "group": "all",
+      "n": 1725,
+      "log_loss": 1.0704564459401962,
+      "brier": 0.6476686723429398,
+      "accuracy": 0.44115942028985505
+    },
+    {
+      "model": "constant",
+      "group": "before_break",
+      "n": 1317,
+      "log_loss": 1.0669937142487702,
+      "brier": 0.6450400191290595,
+      "accuracy": 0.4495064540622627
+    },
+    {
+      "model": "constant",
+      "group": "after_break",
+      "n": 408,
+      "log_loss": 1.0816339401500197,
+      "brier": 0.6561538102906851,
+      "accuracy": 0.41421568627450983
+    },
+    {
+      "model": "constant",
+      "group": "Bundesliga",
+      "n": 306,
+      "log_loss": 1.0853118209726171,
+      "brier": 0.6592553429811618,
+      "accuracy": 0.4019607843137255
+    },
+    {
+      "model": "constant",
+      "group": "EPL",
+      "n": 380,
+      "log_loss": 1.0649667542320065,
+      "brier": 0.6436621323489717,
+      "accuracy": 0.45263157894736844
+    },
+    {
+      "model": "constant",
+      "group": "La_Liga",
+      "n": 380,
+      "log_loss": 1.0676876615762978,
+      "brier": 0.644647893575697,
+      "accuracy": 0.45789473684210524
+    },
+    {
+      "model": "constant",
+      "group": "Ligue_1",
+      "n": 279,
+      "log_loss": 1.0535528616453231,
+      "brier": 0.6349846069983022,
+      "accuracy": 0.48028673835125446
+    },
+    {
+      "model": "constant",
+      "group": "Serie_A",
+      "n": 380,
+      "log_loss": 1.079163225323728,
+      "brier": 0.6546784464090398,
+      "accuracy": 0.41578947368421054
+    },
+    {
+      "model": "elo",
+      "group": "all",
+      "n": 1725,
+      "log_loss": 1.004276498866339,
+      "brier": 0.6000386775388445,
+      "accuracy": 0.5171014492753623
+    },
+    {
+      "model": "elo",
+      "group": "before_break",
+      "n": 1317,
+      "log_loss": 1.0094529749158614,
+      "brier": 0.6037973640603976,
+      "accuracy": 0.5148063781321185
+    },
+    {
+      "model": "elo",
+      "group": "after_break",
+      "n": 408,
+      "log_loss": 0.9875671386770722,
+      "brier": 0.5879058585464786,
+      "accuracy": 0.5245098039215687
+    },
+    {
+      "model": "elo",
+      "group": "Bundesliga",
+      "n": 306,
+      "log_loss": 1.0122958097174752,
+      "brier": 0.606053272552684,
+      "accuracy": 0.49673202614379086
+    },
+    {
+      "model": "elo",
+      "group": "EPL",
+      "n": 380,
+      "log_loss": 0.9841794733571521,
+      "brier": 0.5854710194462227,
+      "accuracy": 0.5263157894736842
+    },
+    {
+      "model": "elo",
+      "group": "La_Liga",
+      "n": 380,
+      "log_loss": 1.0186072039243246,
+      "brier": 0.6102934153270702,
+      "accuracy": 0.5026315789473684
+    },
+    {
+      "model": "elo",
+      "group": "Ligue_1",
+      "n": 279,
+      "log_loss": 1.0075590602796187,
+      "brier": 0.6029544632506834,
+      "accuracy": 0.5448028673835126
+    },
+    {
+      "model": "elo",
+      "group": "Serie_A",
+      "n": 380,
+      "log_loss": 1.001175072594507,
+      "brier": 0.5973674655068253,
+      "accuracy": 0.5184210526315789
+    },
+    {
+      "model": "poisson",
+      "group": "all",
+      "n": 1725,
+      "log_loss": 1.0257903639803136,
+      "brier": 0.6152071509507681,
+      "accuracy": 0.48985507246376814
+    },
+    {
+      "model": "poisson",
+      "group": "before_break",
+      "n": 1317,
+      "log_loss": 1.0291084148872718,
+      "brier": 0.6176715747872232,
+      "accuracy": 0.4920273348519362
+    },
+    {
+      "model": "poisson",
+      "group": "after_break",
+      "n": 408,
+      "log_loss": 1.015079890832118,
+      "brier": 0.6072521357727987,
+      "accuracy": 0.48284313725490197
+    },
+    {
+      "model": "poisson",
+      "group": "Bundesliga",
+      "n": 306,
+      "log_loss": 1.026746745104977,
+      "brier": 0.6173475114414467,
+      "accuracy": 0.49019607843137253
+    },
+    {
+      "model": "poisson",
+      "group": "EPL",
+      "n": 380,
+      "log_loss": 1.0196112623869886,
+      "brier": 0.6098952893831497,
+      "accuracy": 0.5157894736842106
+    },
+    {
+      "model": "poisson",
+      "group": "La_Liga",
+      "n": 380,
+      "log_loss": 1.0352264545237597,
+      "brier": 0.6223752519820969,
+      "accuracy": 0.46842105263157896
+    },
+    {
+      "model": "poisson",
+      "group": "Ligue_1",
+      "n": 279,
+      "log_loss": 1.0198866045734682,
+      "brier": 0.6107933678876188,
+      "accuracy": 0.5017921146953405
+    },
+    {
+      "model": "poisson",
+      "group": "Serie_A",
+      "n": 380,
+      "log_loss": 1.0260978388469368,
+      "brier": 0.6148680040251392,
+      "accuracy": 0.4763157894736842
+    },
+    {
+      "model": "uncalibrated",
+      "group": "all",
+      "n": 1725,
+      "log_loss": 1.0007650826945051,
+      "brier": 0.5959304073270904,
+      "accuracy": 0.5130434782608696
+    },
+    {
+      "model": "uncalibrated",
+      "group": "before_break",
+      "n": 1317,
+      "log_loss": 1.00708561011087,
+      "brier": 0.6006731546716209,
+      "accuracy": 0.5056947608200456
+    },
+    {
+      "model": "uncalibrated",
+      "group": "after_break",
+      "n": 408,
+      "log_loss": 0.9803627919902094,
+      "brier": 0.5806210978840841,
+      "accuracy": 0.5367647058823529
+    },
+    {
+      "model": "uncalibrated",
+      "group": "Bundesliga",
+      "n": 306,
+      "log_loss": 1.0067586412095701,
+      "brier": 0.5997274886672739,
+      "accuracy": 0.5228758169934641
+    },
+    {
+      "model": "uncalibrated",
+      "group": "EPL",
+      "n": 380,
+      "log_loss": 0.9833817103818601,
+      "brier": 0.5824655385184578,
+      "accuracy": 0.5105263157894737
+    },
+    {
+      "model": "uncalibrated",
+      "group": "La_Liga",
+      "n": 380,
+      "log_loss": 1.0156105729184475,
+      "brier": 0.6096373987075677,
+      "accuracy": 0.49473684210526314
+    },
+    {
+      "model": "uncalibrated",
+      "group": "Ligue_1",
+      "n": 279,
+      "log_loss": 1.0067864027326752,
+      "brier": 0.6030672221302749,
+      "accuracy": 0.4946236559139785
+    },
+    {
+      "model": "uncalibrated",
+      "group": "Serie_A",
+      "n": 380,
+      "log_loss": 0.9940556563719984,
+      "brier": 0.5873907104916015,
+      "accuracy": 0.5394736842105263
+    },
+    {
+      "model": "neural",
+      "group": "all",
+      "n": 1725,
+      "log_loss": 0.9984761581587304,
+      "brier": 0.594813177362906,
+      "accuracy": 0.5130434782608696
+    },
+    {
+      "model": "neural",
+      "group": "before_break",
+      "n": 1317,
+      "log_loss": 1.0049014491724633,
+      "brier": 0.599591378008862,
+      "accuracy": 0.5056947608200456
+    },
+    {
+      "model": "neural",
+      "group": "after_break",
+      "n": 408,
+      "log_loss": 0.977735696724696,
+      "brier": 0.5793894267483862,
+      "accuracy": 0.5367647058823529
+    },
+    {
+      "model": "neural",
+      "group": "Bundesliga",
+      "n": 306,
+      "log_loss": 1.0031098547999107,
+      "brier": 0.5978551398513309,
+      "accuracy": 0.5228758169934641
+    },
+    {
+      "model": "neural",
+      "group": "EPL",
+      "n": 380,
+      "log_loss": 0.981580440316633,
+      "brier": 0.5818224808255181,
+      "accuracy": 0.5105263157894737
+    },
+    {
+      "model": "neural",
+      "group": "La_Liga",
+      "n": 380,
+      "log_loss": 1.0129928581466034,
+      "brier": 0.6078289069134777,
+      "accuracy": 0.49473684210526314
+    },
+    {
+      "model": "neural",
+      "group": "Ligue_1",
+      "n": 279,
+      "log_loss": 1.0057399466382206,
+      "brier": 0.602453635552712,
+      "accuracy": 0.4946236559139785
+    },
+    {
+      "model": "neural",
+      "group": "Serie_A",
+      "n": 380,
+      "log_loss": 0.9917906808603787,
+      "brier": 0.5867288592012644,
+      "accuracy": 0.5394736842105263
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "constant",
+      "difference": -0.0719802877814658,
+      "low": -0.08894346813844854,
+      "high": -0.05512390201478895,
+      "groups": 41,
+      "repeats": 1000
+    },
+    {
+      "baseline": "elo",
+      "difference": -0.005800340707608622,
+      "low": -0.015601105829886917,
+      "high": 0.004495059673085905,
+      "groups": 41,
+      "repeats": 1000
+    },
+    {
+      "baseline": "poisson",
+      "difference": -0.027314205821583188,
+      "low": -0.03785780990777974,
+      "high": -0.016205983658953683,
+      "groups": 41,
+      "repeats": 1000
+    }
+  ]
+}

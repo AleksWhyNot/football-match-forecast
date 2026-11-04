@@ -1,0 +1,41 @@
+{
+  "selected": {
+    "name": "dense_32_16",
+    "widths": [
+      32,
+      16
+    ],
+    "seed": 20261102,
+    "parameters": 3043,
+    "validation_log_loss": 0.9694626936298856,
+    "best_epoch": 28
+  },
+  "candidates": [
+    {
+      "name": "dense_32_16",
+      "widths": [
+        32,
+        16
+      ],
+      "seed": 20261102,
+      "parameters": 3043,
+      "validation_log_loss": 0.9694626936298856,
+      "best_epoch": 28
+    },
+    {
+      "name": "dense_64_32",
+      "widths": [
+        64,
+        32
+      ],
+      "seed": 20261103,
+      "parameters": 7107,
+      "validation_log_loss": 0.9745969625461525,
+      "best_epoch": 16
+    }
+  ],
+  "temperature": 1.0773626352358354,
+  "features": 76,
+  "tensorflow": "2.20.0",
+  "keras": "3.11.3"
+}

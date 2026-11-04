@@ -1,0 +1,26 @@
+{
+  "seed": 20261102,
+  "train_last_season": 2016,
+  "validation_season": 2017,
+  "calibration_season": 2018,
+  "test_season": 2019,
+  "widths": [
+    [
+      32,
+      16
+    ],
+    [
+      64,
+      32
+    ]
+  ],
+  "epochs": 100,
+  "patience": 12,
+  "elo_k": 20,
+  "elo_home_advantage": 70,
+  "elo_season_retention": 0.75,
+  "history_windows": [
+    5,
+    10
+  ]
+}

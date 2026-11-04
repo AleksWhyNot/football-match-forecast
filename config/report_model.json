@@ -1,0 +1,8 @@
+{
+  "kind": "match",
+  "model": "dense_32_16_ensemble",
+  "training": "expanding",
+  "probabilities": "raw",
+  "evaluation": "retrospective",
+  "profile": "regularized"
+}

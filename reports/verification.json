@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-11-02",
+  "platform": "Windows, Python 3.12, CPU",
+  "unit_tests_passed": 18,
+  "executed_notebook_cells": 12,
+  "notebook_errors": 0,
+  "archive_extracted_to_different_folder_name": true,
+  "data_verification": "fresh_download_from_pinned_urls",
+  "portable_verification": {
+    "verified_test_rows": 1725,
+    "metrics": {
+      "n": 1725,
+      "log_loss": 0.9984761581929619,
+      "brier": 0.5948131773922443,
+      "accuracy": 0.5130434782608696
+    }
+  },
+  "metric_tolerance": {
+    "rtol": 1e-05,
+    "atol": 1e-06
+  },
+  "other_platforms_tested": false
+}

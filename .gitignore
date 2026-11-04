@@ -1,0 +1,15 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+data/
+models/dense_*.keras
+models/geometry/linear.keras
+reports/predictions.csv
+reports/final_predictions.csv
+reports/temporal/predictions.csv
+reports/temporal/oof_*.csv
+models/temporal/**/predictions.csv

@@ -1,0 +1,38 @@
+{
+  "fingerprint": "e27d2b249918d3f32fd40d5a43a95e09e8932c4300897525184c9c6ff3939675",
+  "period": "2017",
+  "profile": "regularized",
+  "inner_train_periods": [
+    "2014",
+    "2015"
+  ],
+  "inner_stop_period": "2016",
+  "refit_periods": [
+    "2014",
+    "2015",
+    "2016"
+  ],
+  "n_inner_train": 3652,
+  "n_inner_stop": 1826,
+  "n_refit": 5478,
+  "n_forecast": 1826,
+  "seeds": [
+    20261104,
+    20261121
+  ],
+  "best_epochs": [
+    51,
+    26
+  ],
+  "selection_score": 0.9658336709818534,
+  "artifacts": {
+    "predictions.csv": "624762e535b560beab167de24f4b2564077b1524a63771dbff8934aa978ada9e",
+    "seed_20261104/epochs.json": "4adc559a222380b4a9a523b94449ce1e52ed5fe921abe02bf63570b0d816510a",
+    "seed_20261104/model.keras": "224d275a242bfd1970501084bccd133ec8db38f245ae7cbd819778171758b191",
+    "seed_20261104/preprocess.json": "d48f2c8cf2423472e0977bf73c36b179ad6de06b6f9543dad91b7fc834da0af8",
+    "seed_20261121/epochs.json": "6bf0fd1b06ad692120a8697618253292a3f4b2b90b26d7e198b092c35cb8fcd4",
+    "seed_20261121/model.keras": "c24211d1e29f64fccdef5b1781119cf17f080c6e8c1cb8a010259737304f9696",
+    "seed_20261121/preprocess.json": "d48f2c8cf2423472e0977bf73c36b179ad6de06b6f9543dad91b7fc834da0af8"
+  },
+  "training_signature": "900228ce43ce5e24cdcceab70fd8208bede0abaec5dc08b5931c580d77fda07d"
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "match",
+  "metrics": [
+    {
+      "model": "fixed_raw",
+      "n": 1725,
+      "log_loss": 1.0007650826945051,
+      "brier": 0.5959304073270904,
+      "accuracy": 0.5130434782608696
+    },
+    {
+      "model": "fixed_calibrated",
+      "n": 1725,
+      "log_loss": 0.9984761581587307,
+      "brier": 0.594813177362906,
+      "accuracy": 0.5130434782608696
+    },
+    {
+      "model": "elo",
+      "n": 1725,
+      "log_loss": 1.004276498866339,
+      "brier": 0.6000386775388445,
+      "accuracy": 0.5171014492753623
+    },
+    {
+      "model": "expanding_raw",
+      "n": 1725,
+      "log_loss": 0.9918656660266033,
+      "brier": 0.5913088811106687,
+      "accuracy": 0.5142028985507247
+    },
+    {
+      "model": "expanding_selected",
+      "n": 1725,
+      "log_loss": 0.9918656660266033,
+      "brier": 0.5913088811106687,
+      "accuracy": 0.5142028985507247
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "fixed_calibrated",
+      "difference": -0.006610492132127267,
+      "low": -0.012006711336614313,
+      "high": -0.0015643858084080178,
+      "clusters": 41
+    },
+    {
+      "baseline": "fixed_raw",
+      "difference": -0.008899416667901854,
+      "low": -0.01494187240661745,
+      "high": -0.0032948296231052215,
+      "clusters": 41
+    },
+    {
+      "baseline": "expanding_raw",
+      "difference": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "clusters": 41
+    },
+    {
+      "baseline": "elo",
+      "difference": -0.012410832839735882,
+      "low": -0.020660546350321274,
+      "high": -0.0037454162490942935,
+      "clusters": 41
+    }
+  ],
+  "delta_vs_original": -0.006610492132127388,
+  "calibration_test_delta": 0.0
+}

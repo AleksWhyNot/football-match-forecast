@@ -1,0 +1,11 @@
+window,method,log_loss,periods
+expanding,none,0.9735738291438357,"['2017', '2018']"
+expanding,temperature,0.980523457366129,"['2017', '2018']"
+expanding,temperature_shrunk,0.9795250177864736,"['2017', '2018']"
+expanding,affine,0.9805297831777091,"['2017', '2018']"
+expanding,isotonic,1.0040670660125754,"['2017', '2018']"
+recent,none,0.9735738291438357,"['2017', '2018']"
+recent,temperature,0.9802187286923437,"['2017', '2018']"
+recent,temperature_shrunk,0.9792631894924937,"['2017', '2018']"
+recent,affine,0.9800575340387425,"['2017', '2018']"
+recent,isotonic,1.0029616110523951,"['2017', '2018']"

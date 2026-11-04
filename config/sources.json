@@ -1,0 +1,248 @@
+{
+  "repository": "https://github.com/Markjwilkins/Understat",
+  "commit": "4b42df35599f574c08ac65caacaf7975ed5fa138",
+  "provider": "Understat",
+  "retrieved": "2026-11-02",
+  "files": [
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2014_matches.csv",
+      "file": "Bundesliga_2014_matches.csv",
+      "league": "Bundesliga",
+      "season": 2014,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2014_matches.csv",
+      "sha256": "30dab0baa802d9144048a2d2afd78545fab0ee5e42b5dd67565e4c324e2d8a3f"
+    },
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2015_matches.csv",
+      "file": "Bundesliga_2015_matches.csv",
+      "league": "Bundesliga",
+      "season": 2015,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2015_matches.csv",
+      "sha256": "72e1b5fa0c086a966401cb38e3a185780a3d0d7f26e8eaf394416a8585418941"
+    },
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2016_matches.csv",
+      "file": "Bundesliga_2016_matches.csv",
+      "league": "Bundesliga",
+      "season": 2016,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2016_matches.csv",
+      "sha256": "d2c35700fd975c3d503c03bce6fc9517898e83c848baa144cbe463275799c700"
+    },
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2017_matches.csv",
+      "file": "Bundesliga_2017_matches.csv",
+      "league": "Bundesliga",
+      "season": 2017,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2017_matches.csv",
+      "sha256": "3eceba17fe39563aacebf942c7366e4fa8ecec12360743dd2bc9f45d93af0c22"
+    },
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2018_matches.csv",
+      "file": "Bundesliga_2018_matches.csv",
+      "league": "Bundesliga",
+      "season": 2018,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2018_matches.csv",
+      "sha256": "29467fc7c00b490aea1567893dbf3e4e297987fb7f3ce35b86eca66f46385af9"
+    },
+    {
+      "path": "Matches/Bundesliga/Bundesliga_2019_matches.csv",
+      "file": "Bundesliga_2019_matches.csv",
+      "league": "Bundesliga",
+      "season": 2019,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Bundesliga/Bundesliga_2019_matches.csv",
+      "sha256": "8357292c76a2d778fa1e036e36ac02ce27eca4d8be59d00e3957317e0e1a24d2"
+    },
+    {
+      "path": "Matches/EPL/EPL_2014_matches.csv",
+      "file": "EPL_2014_matches.csv",
+      "league": "EPL",
+      "season": 2014,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2014_matches.csv",
+      "sha256": "720a02546f6d4f4e515e494df7d860ff6ee7c3dd16d7cda37c5bff68113d5feb"
+    },
+    {
+      "path": "Matches/EPL/EPL_2015_matches.csv",
+      "file": "EPL_2015_matches.csv",
+      "league": "EPL",
+      "season": 2015,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2015_matches.csv",
+      "sha256": "fc3d812e80cca1153e3c665898752493ca1b476d60cec5621ef7f601ee5397a0"
+    },
+    {
+      "path": "Matches/EPL/EPL_2016_matches.csv",
+      "file": "EPL_2016_matches.csv",
+      "league": "EPL",
+      "season": 2016,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2016_matches.csv",
+      "sha256": "11caa7bcb1a216062e318addc6eb00770fc22d8abfa26116d91edfb5ad7d43f5"
+    },
+    {
+      "path": "Matches/EPL/EPL_2017_matches.csv",
+      "file": "EPL_2017_matches.csv",
+      "league": "EPL",
+      "season": 2017,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2017_matches.csv",
+      "sha256": "78c55b040ff6205e9fb3f005f32a59a852e37cfd954a4b890f3314a7320b1dd7"
+    },
+    {
+      "path": "Matches/EPL/EPL_2018_matches.csv",
+      "file": "EPL_2018_matches.csv",
+      "league": "EPL",
+      "season": 2018,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2018_matches.csv",
+      "sha256": "f35fc7ee7d9643cade2b9019d6e74f62f161293846e3d48ac21032d9bbcd50d6"
+    },
+    {
+      "path": "Matches/EPL/EPL_2019_matches.csv",
+      "file": "EPL_2019_matches.csv",
+      "league": "EPL",
+      "season": 2019,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/EPL/EPL_2019_matches.csv",
+      "sha256": "1d9ae4c15a60ffb8e73c3117266f7f1e65f92e92ab0be6b281398febd0f090e6"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2014_matches.csv",
+      "file": "La_liga_2014_matches.csv",
+      "league": "La_Liga",
+      "season": 2014,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2014_matches.csv",
+      "sha256": "0c72eb2765ac46fac921ecba7d5bba5e53de101f1b0cf388fbd1700b6aaa154f"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2015_matches.csv",
+      "file": "La_liga_2015_matches.csv",
+      "league": "La_Liga",
+      "season": 2015,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2015_matches.csv",
+      "sha256": "f323a3497c8311a0802c4f567e46777ffc3210bc74c08ec9327f2324dc607cbb"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2016_matches.csv",
+      "file": "La_liga_2016_matches.csv",
+      "league": "La_Liga",
+      "season": 2016,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2016_matches.csv",
+      "sha256": "93331ebd6b4b6669adcda5685eab980fab3d827e105e5820cc41bbaefe2675ef"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2017_matches.csv",
+      "file": "La_liga_2017_matches.csv",
+      "league": "La_Liga",
+      "season": 2017,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2017_matches.csv",
+      "sha256": "498e9c17ad38f583c1c038c7cda3f4d551c1ebc20ee438e7c45355e4c6062adc"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2018_matches.csv",
+      "file": "La_liga_2018_matches.csv",
+      "league": "La_Liga",
+      "season": 2018,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2018_matches.csv",
+      "sha256": "29dd44942e3ca81886051ae38fa87f3401fa20dccff0763afe85d2622b7f8095"
+    },
+    {
+      "path": "Matches/La_Liga/La_liga_2019_matches.csv",
+      "file": "La_liga_2019_matches.csv",
+      "league": "La_Liga",
+      "season": 2019,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/La_Liga/La_liga_2019_matches.csv",
+      "sha256": "7a817682bfa886ff6f98d7143f5eda2aecd1f84780b5b8f78b7576a0d5312564"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2014_matches.csv",
+      "file": "Ligue_1_2014_matches.csv",
+      "league": "Ligue_1",
+      "season": 2014,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2014_matches.csv",
+      "sha256": "0b33621216be3683797d1f861b04163d1b17787bdb9584ea29c59fe6fe38910f"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2015_matches.csv",
+      "file": "Ligue_1_2015_matches.csv",
+      "league": "Ligue_1",
+      "season": 2015,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2015_matches.csv",
+      "sha256": "826e2d747f5864dc356d10428b30b31520ca4ab047915f33f83993d62f8592c2"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2016_matches.csv",
+      "file": "Ligue_1_2016_matches.csv",
+      "league": "Ligue_1",
+      "season": 2016,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2016_matches.csv",
+      "sha256": "cfdf15138ad2677748f5591699fb99531272d03d7b64c1253ba4736c4d712b27"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2017_matches.csv",
+      "file": "Ligue_1_2017_matches.csv",
+      "league": "Ligue_1",
+      "season": 2017,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2017_matches.csv",
+      "sha256": "93e51366d5ad32c9268810f138e9bd4fce12d2ff88e0c59f9598c48b895137ce"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2018_matches.csv",
+      "file": "Ligue_1_2018_matches.csv",
+      "league": "Ligue_1",
+      "season": 2018,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2018_matches.csv",
+      "sha256": "5d6a5150a8513d9f6c518b1fc2d0e234267ee932e87bf9ba5017d0e5ed958283"
+    },
+    {
+      "path": "Matches/Ligue_1/Ligue_1_2019_matches.csv",
+      "file": "Ligue_1_2019_matches.csv",
+      "league": "Ligue_1",
+      "season": 2019,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Ligue_1/Ligue_1_2019_matches.csv",
+      "sha256": "4ea3d77a0f1491d8544ed71b4b902ac72a9055328891feb09fd439a34a5a6490"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2014_matches.csv",
+      "file": "Serie_A_2014_matches.csv",
+      "league": "Serie_A",
+      "season": 2014,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2014_matches.csv",
+      "sha256": "76a1ef407aa1388c85ce9647754906cc29f03788c101038de26b451be79971e4"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2015_matches.csv",
+      "file": "Serie_A_2015_matches.csv",
+      "league": "Serie_A",
+      "season": 2015,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2015_matches.csv",
+      "sha256": "0b567f063e54076dd8ccd1363c4909a5942bbe7737e01bed913dcd472aa22cc0"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2016_matches.csv",
+      "file": "Serie_A_2016_matches.csv",
+      "league": "Serie_A",
+      "season": 2016,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2016_matches.csv",
+      "sha256": "fad517d7b2eed7ce8a08a1b33a42a34e3c1a03988da8401fd3cda0c0817bcced"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2017_matches.csv",
+      "file": "Serie_A_2017_matches.csv",
+      "league": "Serie_A",
+      "season": 2017,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2017_matches.csv",
+      "sha256": "a814201c555229c0645461f3290beb3be79c973bd5ef27bafdac28410cb1c207"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2018_matches.csv",
+      "file": "Serie_A_2018_matches.csv",
+      "league": "Serie_A",
+      "season": 2018,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2018_matches.csv",
+      "sha256": "a2b843dc845d762fbb94a41a90320296f9199ac0c2fdf0bfbc8075c791ac613e"
+    },
+    {
+      "path": "Matches/Serie_A/Serie_A_2019_matches.csv",
+      "file": "Serie_A_2019_matches.csv",
+      "league": "Serie_A",
+      "season": 2019,
+      "url": "https://raw.githubusercontent.com/Markjwilkins/Understat/4b42df35599f574c08ac65caacaf7975ed5fa138/Matches/Serie_A/Serie_A_2019_matches.csv",
+      "sha256": "e873d7eab8c44223701ff5dd391b1d8f8de4443559809870bc0bd9927d946d9e"
+    }
+  ]
+}

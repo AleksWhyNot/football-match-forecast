@@ -1,0 +1,42 @@
+{
+  "folds": [
+    {
+      "profile": "regularized",
+      "period": "2016",
+      "max_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "profile": "regularized",
+      "period": "2017",
+      "max_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "profile": "regularized",
+      "period": "2018",
+      "max_absolute_difference": 9.71445146547012e-17
+    },
+    {
+      "profile": "regularized",
+      "period": "2019",
+      "max_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "profile": "standard",
+      "period": "2016",
+      "max_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "profile": "standard",
+      "period": "2017",
+      "max_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "profile": "standard",
+      "period": "2018",
+      "max_absolute_difference": 1.1102230246251565e-16
+    }
+  ],
+  "models": 14,
+  "input_sha256": "099ef42ef41a7f9aecb7b3ea78b2de89cce96109a28c5fa3bf04989351decb46",
+  "training_signature": "900228ce43ce5e24cdcceab70fd8208bede0abaec5dc08b5931c580d77fda07d"
+}

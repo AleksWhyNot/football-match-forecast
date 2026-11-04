@@ -1,0 +1,53 @@
+{
+  "kind": "match",
+  "input_file": "data/processed/features.csv",
+  "period_column": "season",
+  "id_column": "match_id",
+  "first_oof": "2016",
+  "first_test": "2019",
+  "classes": 3,
+  "epochs": 100,
+  "patience": 10,
+  "seeds": [
+    20261104,
+    20261121
+  ],
+  "embargo_days": 0,
+  "recent_periods": 1,
+  "profiles": [
+    {
+      "name": "standard",
+      "widths": [
+        32,
+        16
+      ],
+      "l2": 0.001,
+      "dropout": 0.1
+    },
+    {
+      "name": "regularized",
+      "widths": [
+        32,
+        16
+      ],
+      "l2": 0.005,
+      "dropout": 0.2
+    }
+  ],
+  "selection": "profile by mean temporal validation score; calibrator by held-forward log loss; intervals by coverage then interval score",
+  "test_status": "retrospective; previous test was inspected",
+  "sources": [
+    "https://otexts.com/fpp3/tscv.html",
+    "https://proceedings.mlr.press/v70/guo17a.html"
+  ],
+  "thesis_reference": {
+    "section": "4.1.3",
+    "pages": [
+      22,
+      33,
+      35
+    ],
+    "adopted": "expanding history, repeated refit, separate chronological calibration",
+    "gap": "one full day for xG; whole completed seasons for season forecasts"
+  }
+}
